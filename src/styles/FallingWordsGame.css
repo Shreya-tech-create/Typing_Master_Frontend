@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+/* ---------- Base ---------- */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+.falling-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #f0faff, #cdeeff);
+  background-image: url("../images/gameimg2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: center;
+  padding-top: 30vh;          
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* ---------- HEADING & PARAGRAPH ---------- */
+.falling-container h1 {
+  font-size: 50px;
+  font-weight: 800;
+  color: #000;
+  margin: 0 0 10px 0;
+}
+
+.falling-container p {
+  font-size: 20px;
+  color: #292828;
+  margin: 0 0 15px 0;
+}
+
+/* ---------- GAME AREA (NEW) ---------- */
+.game-area {
+  position: relative;        /* words इसके अंदर absolute होंगे */
+  width: 100%;
+  max-width: 800px;
+  height: 65vh;              /* जितनी गिरने की जगह चाहिए */
+  overflow: hidden;
+}
+
+/* ---------- FALLING WORD ---------- */
+.falling-word {
+  position: absolute;
+  font-size: 36px;
+  font-weight: 700;
+  display: flex;
+  gap: 8px;
+  white-space: nowrap;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.letter        { color: #555; transition: color 0.3s ease; }
+.letter.correct{ color: #28a745; text-shadow: 0 0 6px #28a745; }
+
+/* ---------- POPUP ---------- */
+.game-over-popup {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 40px 50px;
+  border: 3px solid #007bff;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,.3);
+  z-index: 999;
+  animation: popin 0.4s ease-out, confetti 1s ease-in-out;
+  text-align: center;
+  max-width: 90vw;
+}
+
+@keyframes popin {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(.8); }
+  to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+@keyframes confetti {
+  0% { box-shadow: 0 0 0 0 rgba(255,0,0,.8), 0 0 0 0 rgba(0,255,0,.8), 0 0 0 0 rgba(0,0,255,.8); }
+  100%{ box-shadow: 20px 20px 30px rgba(255,0,0,0), -20px -20px 30px rgba(0,255,0,0), 20px -20px 30px rgba(0,0,255,0); }
+}
+
+.game-over-popup h3 { font-size: 32px; font-weight: 700; color:#2c3e50; margin-bottom:10px; }
+.game-over-popup p  { font-size: 22px; color:#007bff;   margin-bottom:25px; }
+
+.wow-text {
+  font-size: 20px; font-weight: bold; color:#ff5c5c;
+  animation: bounce 1s ease infinite alternate;
+}
+@keyframes bounce { from{transform:translateY(0);} to{transform:translateY(-8px);} }
+
+.game-over-popup button {
+  background:#007bff; color:#fff; border:none;
+  padding:12px 30px; font-size:18px; font-weight:600;
+  border-radius:10px; cursor:pointer; transition:background .3s ease;
+}
+.game-over-popup button:hover { background:#0056b3; }

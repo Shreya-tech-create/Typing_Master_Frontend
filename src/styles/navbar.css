@@ -1,0 +1,93 @@
+/* ------------- BASE ------------- */
+.navbar {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #FFF8F8, #93bce1);
+  box-shadow: 0 4px 10px rgba(47,47,47,.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 999;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: auto;          /* ⬅ prevents breaking; adds auto‑scroll if ever needed */
+  white-space: nowrap;       /* keep everything on one line */
+}
+
+/* Logo */
+.navbar-logo{display:flex;align-items:center;gap:8px;cursor:pointer;}
+.logo-title-text{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:#000}
+.navbar-icon{width:48px;height:48px}
+
+/* Search */
+.navbar-search{flex:1 1 300px;max-width:420px;margin:0 24px}
+.navbar-search input{
+  width:100%;padding:9px 18px;font-size:1.1rem;border-radius:25px;
+  border:1.5px solid #ddd;outline:none;background:#fff;box-sizing:border-box;color:#000
+}
+.navbar-search input::placeholder{color:#444}
+
+/* Links */
+.navbar-links{display:flex;gap:24px;align-items:center;margin-right:4px}
+.navbar-links .nav-link{
+  font-size:1.45rem;font-weight:500;color:#333;text-decoration:none;position:relative;
+  transition:.3s;cursor:pointer
+}
+.navbar-links .nav-link::after{
+  content:'';position:absolute;left:0;bottom:-4px;height:3px;width:0;
+  background:#5867eb;transition:width .3s
+}
+.navbar-links .nav-link:hover::after,
+.navbar-links .nav-link.active::after{width:100%}
+.navbar-links .nav-link:hover,
+.navbar-links .nav-link.active{color:#5867eb}
+
+/* Dashboard */
+.dashboard-wrapper{position:relative;display:flex;align-items:center}
+.dashboard-popup{
+  position:absolute;top:48px;right:0;width:220px;padding:14px 18px;background:#fff;
+  border:1px solid #ccc;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.1);
+  font-size:.95rem;animation:fade .2s;z-index:1000;color:#333
+}
+.dashboard-popup p{margin:8px 0;line-height:1.35}
+.dashboard-popup .logout-btn{
+  margin-top:10px;width:100%;padding:8px 12px;background:#ff6b6b;color:#fff;
+  border:none;border-radius:6px;cursor:pointer;transition:.3s
+}
+.dashboard-popup .logout-btn:hover{background:#e74c3c}
+@keyframes fade{from{opacity:0;transform:translateY(-10%)}to{opacity:1;transform:translateY(0)}}
+
+/* ------------- BREAKPOINTS ------------- */
+
+/* Medium screens ≤1024 px */
+@media(max-width:1024px){
+  .logo-title-text{font-size:2rem}
+  .navbar-links .nav-link{font-size:1.25rem}
+  .navbar-search{flex:1 1 240px;margin:0 16px}
+}
+
+/* Tablets ≤768 px */
+@media(max-width:768px){
+  .navbar{padding:0 14px;height:64px}
+  .logo-title-text{font-size:1.8rem}
+  .navbar-icon{width:42px;height:42px}
+  .navbar-search{flex:1 1 160px;margin:0 12px}
+  .navbar-search input{font-size:.95rem;padding:7px 14px}
+  .navbar-links{gap:16px}
+  .navbar-links .nav-link{font-size:1.1rem;padding:4px 6px}
+  .dashboard-popup{right:2%;width:96%}
+}
+
+/* Small phones ≤480 px */
+@media(max-width:480px){
+  .logo-title-text{font-size:1.55rem}
+  .navbar-icon{width:36px;height:36px}
+  .navbar-search{flex:1 1 110px;margin:0 8px}
+  .navbar-links{gap:12px}
+  .navbar-links .nav-link{font-size:.95rem}
+  .dashboard-popup{font-size:.85rem;padding:10px 14px}
+  .dashboard-popup .logout-btn{padding:6px 9px;font-size:.85rem}
+}

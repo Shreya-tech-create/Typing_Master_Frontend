@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+.challenge-container{
+  font-family:"Poppins",sans-serif;
+   width: 100vw;
+  height: 94vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background-image:url(../images/backimg.webp);
+ background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ---------- Menu (difficulty cards) ---------- */
+.difficulty-cards h2{margin-bottom:24px;font-size:64px;font-weight:700;color: black;margin-left: 8%;}
+.card-row{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
+.diff-card{
+  width:300px;padding:40px 0;border-radius:12px;height: 20%;
+  background:#fff;text-align:center;
+  font-size:24px;font-weight:700;cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  transition:transform .25s ease,box-shadow .25s ease;
+  color: black;
+}
+.diff-card:hover{transform:translateY(-6px);box-shadow:0 8px 18px rgba(0,0,0,.15)}
+.diff-card.easy   {border-top:8px solid #2ecc71}
+.diff-card.medium {border-top:8px solid #f1c40f}
+.diff-card.hard   {border-top:8px solid #e74c3c}
+
+/* ---------- Typing area ---------- */
+.typing-area{max-width:700px;width:90%;text-align:center}
+.typing-area h3{font-size:28px;font-weight:700;margin-bottom:16px}
+.paragraph{
+  background:#f5f5f5;padding:20px;border-radius:10px;
+  font-size:18px;margin-bottom:20px
+}
+.typing-area textarea{
+  width:90%;padding:15px;border-radius:10px;
+  border:2px solid #ccc;font-size:18px;resize:none;
+}
+.timer{margin-top:12px;font-size:20px;font-weight:600}
+
+/* ---------- Popup (result) ---------- */
+.challenge-popup{
+  background:#fff;padding:30px 40px;border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,.2);
+  text-align:center
+}
+.challenge-popup h3{font-size:26px;font-weight:700;margin-bottom:18px;color: black;}
+.challenge-popup button{
+  padding:10px 24px;border:none;border-radius:8px;
+  background:#3498db;color:#fff;font-size:18px;font-weight:600;
+  cursor:pointer;transition:background .3s ease
+}
+.challenge-popup button:hover{background:#217dc4}
+.back-btn {
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  font-weight: 600;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background-color: #0056b3;
+}
+
+.diff-card img.card-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 14px;
+}

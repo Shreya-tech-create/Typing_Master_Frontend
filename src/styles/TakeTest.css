@@ -1,0 +1,153 @@
+
+
+/* Test Wrapper */
+.test-wrapper {
+  min-height: 60vh; 
+  background-image: url(../images/test5.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 50px 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  /* ✅ NEW — keep the 250% width but centre the block */
+  left: 10%;
+  transform: translateX(-10%);
+}
+
+.test-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* overlay dark */
+  z-index: 1;
+}
+
+.test-wrapper > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Title */
+.test-title {
+  font-size: 2.9rem;
+  margin-bottom: 21px;
+  font-weight: bold;
+  background-color: white;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+}
+
+/* Typing Area */
+.typing-area {
+  background-color: white;
+  color: black;
+  padding: 30px 40px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 700px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  margin-bottom: 28px;
+  position: relative;
+}
+
+/* Paragraph to Type */
+.paragraph-box {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* Correct & Incorrect Highlighting */
+.correct { color: green; }
+.incorrect { color: red; }
+
+/* Hidden Textarea */
+.hidden-textarea {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: none;
+  resize: none;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  caret-color: transparent;
+  outline: none;
+}
+
+/* Mechanical Keyboard */
+.keyboard1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.keyboard-row1 {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.key1 {
+  width: 45px;
+  height: 45px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #eee;
+  color: black;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Stats Section */
+.stats {
+  font-size: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 15px;
+}
+
+/* Reset Button */
+.reset-btn {
+  margin: 30px auto 0;
+  padding: 12px 28px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+.reset-btn:hover { background-color: #0056b3; }
+
+.test-paragraph-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,.08);
+}
+.paragraph-box { overflow-wrap: anywhere; word-wrap: break-word; }
+
