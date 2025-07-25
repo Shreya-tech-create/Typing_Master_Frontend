@@ -1,8 +1,8 @@
 export default {
-    TEST: "http://localhost:5000/api/test",
-    SIGNUP :"http://localhost:5000/api/auth/signup",
-    LOGIN :"http://localhost:5000/api/auth/login",
-    SCORES:"http://localhost:5000/api/score",
-    LEADERBOARD:"http://localhost:5000/api/leaderboard"
+    TEST: "https://typing-master-server.onrender.com/api/test",
+    SIGNUP :"https://typing-master-server.onrender.com/api/auth/signup",
+    LOGIN :"https://typing-master-server.onrender.com/api/auth/login",
+    SCORES:"https://typing-master-server.onrender.com/api/score",
+    LEADERBOARD:"https://typing-master-server.onrender.com/api/leaderboard"
 
 }
