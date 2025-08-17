@@ -13,7 +13,9 @@ const Navbar = () => {
   const [index, setIndex] = useState(0);
   const [showDashboard, setShowDashboard] = useState(false);
   const [score, setScore] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dashboardRef = useRef();
+  const mobileMenuRef = useRef();
 
   // ---------- rotating placeholder ----------
   const phrases = ["leaderboard", "challenges", "take test", "accuracy", "typing speed"];
@@ -45,6 +47,9 @@ const Navbar = () => {
       if (dashboardRef.current && !dashboardRef.current.contains(e.target)) {
         setShowDashboard(false);
       }
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target)) {
+        setIsMobileMenuOpen(false);
+      }
     };
     document.addEventListener("mousedown", close);
     return () => document.removeEventListener("mousedown", close);
@@ -53,6 +58,15 @@ const Navbar = () => {
   const handleLogout = () => {
     logout();
     navigate("/login");
+    setIsMobileMenuOpen(false);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -67,26 +81,25 @@ const Navbar = () => {
         <span className="logo-title-text">TypingPro</span>
       </div>
 
-      {/* -------- search -------- */}
+      {/* -------- search (hidden on mobile) -------- */}
       <div className="navbar-search">
         <input type="text" placeholder={placeholder} />
       </div>
 
-      {/* -------- links -------- */}
-      <div className="navbar-links">
-        <NavLink to="/" className="nav-link">
+      {/* -------- desktop links -------- */}
+      <div className="navbar-links desktop-links">
+        <NavLink to="/" className="nav-link" onClick={closeMobileMenu}>
           Home
-        </NavLink>                             {/* ✅ Home now points to LandingPage */}
+        </NavLink>
 
         {user ? (
           <>
-            <NavLink to="/test" className="nav-link">
+            <NavLink to="/test" className="nav-link" onClick={closeMobileMenu}>
               Take&nbsp;Test
-            </NavLink>                          {/* ✅ Test page at /test */}
-            <NavLink to="/leaderboard" className="nav-link">
+            </NavLink>
+            <NavLink to="/leaderboard" className="nav-link" onClick={closeMobileMenu}>
               Leaderboard
             </NavLink>
-            {/* <NavLink to="/game" className="nav-link">Game</NavLink> */} {/* ➕ If you want menu link */}
 
             {/* ---- Dashboard dropdown ---- */}
             <div className="dashboard-wrapper" ref={dashboardRef}>
@@ -123,14 +136,85 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <NavLink to="/signup" className="nav-link">
+            <NavLink to="/signup" className="nav-link" onClick={closeMobileMenu}>
               Signup
             </NavLink>
-            <NavLink to="/login" className="nav-link">
+            <NavLink to="/login" className="nav-link" onClick={closeMobileMenu}>
               Login
             </NavLink>
           </>
         )}
+      </div>
+
+      {/* -------- mobile menu button -------- */}
+      <div className="mobile-menu-button" onClick={toggleMobileMenu}>
+        <div className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      {/* -------- mobile menu -------- */}
+      <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`} ref={mobileMenuRef}>
+        <div className="mobile-search">
+          <input type="text" placeholder={placeholder} />
+        </div>
+        
+        <div className="mobile-links">
+          <NavLink to="/" className="mobile-nav-link" onClick={closeMobileMenu}>
+            Home
+          </NavLink>
+
+          {user ? (
+            <>
+              <NavLink to="/test" className="mobile-nav-link" onClick={closeMobileMenu}>
+                Take Test
+              </NavLink>
+              <NavLink to="/leaderboard" className="mobile-nav-link" onClick={closeMobileMenu}>
+                Leaderboard
+              </NavLink>
+              
+              <div className="mobile-dashboard">
+                <div className="mobile-dashboard-header">
+                  <strong>Dashboard</strong>
+                </div>
+                <div className="mobile-dashboard-content">
+                  <p>
+                    <strong>Name:</strong> {user.name || user.username || "Anonymous"}
+                  </p>
+                  <p>
+                    <strong>Email:</strong> {user.email}
+                  </p>
+                  {score ? (
+                    <>
+                      <p>
+                        <strong>Speed:</strong> {score.speed} WPM
+                      </p>
+                      <p>
+                        <strong>Accuracy:</strong> {score.accuracy}%
+                      </p>
+                    </>
+                  ) : (
+                    <p>No test given yet</p>
+                  )}
+                  <button onClick={handleLogout} className="mobile-logout-btn">
+                    Logout
+                  </button>
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <NavLink to="/signup" className="mobile-nav-link" onClick={closeMobileMenu}>
+                Signup
+              </NavLink>
+              <NavLink to="/login" className="mobile-nav-link" onClick={closeMobileMenu}>
+                Login
+              </NavLink>
+            </>
+          )}
+        </div>
       </div>
     </nav>
   );

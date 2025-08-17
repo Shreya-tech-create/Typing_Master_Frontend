@@ -12,7 +12,8 @@ import Leaderboard from "./pages/Leaderboard";
 import AddTest from "./pages/AddTest";
 import FallingWordsGame from "./pages/FallingWordsGame";
 import Challenge from "./pages/Challenge";
-import ContactUs from "./pages/ContactUs"; 
+import ContactUs from "./pages/ContactUs";
+import AdminDashboard from "./pages/AdminDashboard"; 
 
 /* ⬇️  COMPONENT */
 import PrivateRoute from "./components/PrivateRoute";
@@ -29,6 +30,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login"  element={<Login />}  />
           <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/admin"  element={<AdminDashboard />} />
 
           {/* 🔒 Private */}
           <Route

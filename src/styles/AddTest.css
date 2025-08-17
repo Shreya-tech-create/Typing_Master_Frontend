@@ -57,3 +57,201 @@
   color: green;
   font-weight: 500;
 }
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+  .add-test-container {
+    max-width: 700px;
+    margin: 3rem auto;
+    padding: 2rem 3rem;
+  }
+  
+  .add-test-container h2 {
+    font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+    margin-bottom: 1.5rem;
+  }
+  
+  .add-test-textarea {
+    padding: 1.5rem;
+    font-size: clamp(1rem, 1.1vw, 1.1rem);
+    min-height: 180px;
+  }
+  
+  .add-test-btn {
+    padding: 1rem;
+    font-size: clamp(1.1rem, 1.2vw, 1.2rem);
+  }
+}
+
+/* Medium screens (768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 769px) {
+  .add-test-container {
+    max-width: 650px;
+    margin: 2.5rem auto;
+    padding: 1.5rem 2.5rem;
+  }
+  
+  .add-test-container h2 {
+    font-size: clamp(1.6rem, 2vw, 1.8rem);
+  }
+}
+
+/* Tablets (481px to 768px) */
+@media (max-width: 768px) {
+  .add-test-container {
+    max-width: 95%;
+    margin: clamp(1.5rem, 4vw, 2rem) auto;
+    padding: clamp(1rem, 3vw, 1.5rem) clamp(1.5rem, 4vw, 2rem);
+    margin-top: 80px;
+  }
+  
+  .add-test-container h2 {
+    font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+    margin-bottom: clamp(0.8rem, 2vw, 1rem);
+  }
+  
+  .add-test-form {
+    gap: clamp(0.8rem, 2vw, 1rem);
+  }
+  
+  .add-test-textarea {
+    padding: clamp(0.8rem, 2vw, 1rem);
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    min-height: clamp(120px, 25vw, 150px);
+    border-radius: 6px;
+  }
+  
+  .add-test-btn {
+    padding: clamp(0.6rem, 2vw, 0.75rem);
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    border-radius: 6px;
+  }
+  
+  .add-test-message {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    margin-top: clamp(0.8rem, 2vw, 1rem);
+  }
+}
+
+/* Mobile phones (320px to 480px) */
+@media (max-width: 480px) {
+  .add-test-container {
+    max-width: 98%;
+    margin: clamp(1rem, 3vw, 1.5rem) auto;
+    padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1rem, 3vw, 1.5rem);
+    margin-top: 75px;
+    border-radius: 8px;
+  }
+  
+  .add-test-container h2 {
+    font-size: clamp(1.2rem, 4vw, 1.4rem);
+    margin-bottom: clamp(0.6rem, 2vw, 0.8rem);
+  }
+  
+  .add-test-form {
+    gap: clamp(0.6rem, 2vw, 0.8rem);
+  }
+  
+  .add-test-textarea {
+    padding: clamp(0.6rem, 2vw, 0.8rem);
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
+    min-height: clamp(100px, 30vw, 120px);
+    border-radius: 4px;
+  }
+  
+  .add-test-btn {
+    padding: clamp(0.5rem, 2.5vw, 0.6rem);
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    border-radius: 4px;
+  }
+  
+  .add-test-message {
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
+    margin-top: clamp(0.6rem, 2vw, 0.8rem);
+  }
+}
+
+/* Extra small devices (below 320px) */
+@media (max-width: 320px) {
+  .add-test-container {
+    max-width: 100%;
+    margin: 1rem auto;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+  }
+  
+  .add-test-container h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .add-test-form {
+    gap: 0.6rem;
+  }
+  
+  .add-test-textarea {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    min-height: 80px;
+  }
+  
+  .add-test-btn {
+    padding: 0.4rem;
+    font-size: 0.85rem;
+  }
+  
+  .add-test-message {
+    font-size: 0.75rem;
+    margin-top: 0.6rem;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .add-test-container {
+    margin: 1rem auto;
+    padding: 1rem 1.5rem;
+  }
+  
+  .add-test-container h2 {
+    font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+    margin-bottom: 0.8rem;
+  }
+  
+  .add-test-textarea {
+    min-height: 100px;
+    padding: 0.8rem;
+  }
+  
+  .add-test-btn {
+    padding: 0.6rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .add-test-container {
+    border: 2px solid #000;
+  }
+  
+  .add-test-textarea {
+    border: 2px solid #000;
+  }
+  
+  .add-test-btn {
+    border: 2px solid #000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .add-test-textarea {
+    transition: none;
+  }
+  
+  .add-test-btn {
+    transition: none;
+  }
+}

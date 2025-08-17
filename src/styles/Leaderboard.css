@@ -51,8 +51,8 @@
 }
 
 .leaderboard-wrapper {
-   height: 100vh; /* exact screen height, no extra */
-  width: 100vw; /* full screen width */
+  height: 100vh; /* exact screen height, no extra */
+  width: 100%; /* full screen width */
   padding: 40px 20px;
   background-image: url(../images/T1.webp);
   background-repeat: no-repeat;
@@ -141,4 +141,217 @@ width: 100%; /* ✅ Full width */
   text-align: center;
   margin-top: 20px;
   font-weight: bold;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+  .leaderboard-wrapper {
+    padding: 50px 30px;
+  }
+  
+  .leaderboard-title {
+    font-size: clamp(2.5rem, 3vw, 3.5rem);
+    margin-bottom: 40px;
+  }
+  
+  .leaderboard-table-container {
+    max-width: 1100px;
+  }
+  
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 20px 30px;
+    font-size: clamp(1.1rem, 1.2vw, 1.3rem);
+  }
+}
+
+/* Medium screens (768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 769px) {
+  .leaderboard-wrapper {
+    padding: 40px 25px;
+  }
+  
+  .leaderboard-title {
+    font-size: clamp(2rem, 2.5vw, 2.8rem);
+    margin-bottom: 35px;
+  }
+  
+  .leaderboard-table-container {
+    max-width: 900px;
+  }
+  
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 16px 20px;
+    font-size: clamp(1rem, 1.1vw, 1.2rem);
+  }
+}
+
+/* Tablets (481px to 768px) */
+@media (max-width: 768px) {
+  .leaderboard-wrapper {
+    height: auto;
+    min-height: 100vh;
+    padding: clamp(20px, 4vw, 30px) clamp(10px, 2vw, 20px);
+    margin-top: 60px;
+  }
+  
+  .leaderboard-title {
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    margin-bottom: clamp(20px, 4vw, 30px);
+    padding: clamp(10px, 2vw, 15px);
+    border-radius: 8px;
+  }
+  
+  .leaderboard-table-container {
+    max-width: 95%;
+    border-radius: 10px;
+  }
+  
+  .leaderboard-table {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  }
+  
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: clamp(10px, 2.5vw, 15px) clamp(8px, 2vw, 12px);
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  }
+  
+  .rank-icon {
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
+  }
+}
+
+/* Mobile phones (320px to 480px) */
+@media (max-width: 480px) {
+  .leaderboard-wrapper {
+    padding: clamp(15px, 3vw, 20px) clamp(5px, 1.5vw, 10px);
+    margin-top: 55px;
+  }
+  
+  .leaderboard-title {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+    margin-bottom: clamp(15px, 3vw, 20px);
+    padding: clamp(8px, 2vw, 12px);
+    border-radius: 6px;
+  }
+  
+  .leaderboard-table-container {
+    max-width: 98%;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .leaderboard-table {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+  }
+  
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: clamp(8px, 2vw, 12px) clamp(6px, 1.5vw, 10px);
+    font-size: clamp(0.8rem, 3vw, 1rem);
+  }
+  
+  .leaderboard-table th {
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+  }
+  
+  .rank-icon {
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+  }
+  
+  .error {
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    margin-top: 15px;
+  }
+}
+
+/* Extra small devices (below 320px) */
+@media (max-width: 320px) {
+  .leaderboard-wrapper {
+    padding: 10px 2px;
+  }
+  
+  .leaderboard-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding: 6px 8px;
+  }
+  
+  .leaderboard-table-container {
+    max-width: 100%;
+    border-radius: 6px;
+  }
+  
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 6px 4px;
+    font-size: 0.75rem;
+  }
+  
+  .leaderboard-table th {
+    font-size: 0.8rem;
+  }
+  
+  .rank-icon {
+    font-size: 0.9rem;
+  }
+  
+  .error {
+    font-size: 0.8rem;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .leaderboard-wrapper {
+    padding: 10px 15px;
+    margin-top: 50px;
+  }
+  
+  .leaderboard-title {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    margin-bottom: 15px;
+    padding: 8px 12px;
+  }
+  
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 8px 10px;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+  }
+  
+  .rank-icon {
+    font-size: 1.1rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .leaderboard-table-container {
+    border: 2px solid #000;
+  }
+  
+  .leaderboard-table th,
+  .leaderboard-table td {
+    border: 1px solid #000;
+  }
+  
+  .leaderboard-title {
+    border: 2px solid #000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .leaderboard-table tbody tr {
+    transition: none;
+  }
+  
+  .leaderboard-table tbody tr:hover {
+    transform: none;
+  }
 }

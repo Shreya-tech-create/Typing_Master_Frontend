@@ -2,7 +2,7 @@
 
 .challenge-container{
   font-family:"Poppins",sans-serif;
-   width: 100vw;
+  width: 100%;
   height: 94vh;
   display:flex;
   flex-direction:column;
@@ -78,4 +78,385 @@
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 14px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+  .challenge-container {
+    padding: 30px;
+  }
+  
+  .difficulty-cards h2 {
+    font-size: clamp(3rem, 4vw, 4rem);
+    margin-bottom: 30px;
+  }
+  
+  .card-row {
+    gap: 30px;
+  }
+  
+  .diff-card {
+    width: clamp(280px, 25vw, 350px);
+    padding: clamp(35px, 3vw, 45px) 0;
+    font-size: clamp(1.8rem, 2vw, 2.2rem);
+  }
+  
+  .typing-area {
+    max-width: 800px;
+  }
+  
+  .typing-area h3 {
+    font-size: clamp(2rem, 2.5vw, 2.5rem);
+  }
+  
+  .paragraph {
+    font-size: clamp(1.4rem, 1.5vw, 1.6rem);
+    padding: clamp(20px, 2vw, 25px);
+  }
+  
+  .typing-area textarea {
+    font-size: clamp(1.4rem, 1.5vw, 1.6rem);
+    padding: clamp(15px, 1.5vw, 20px);
+  }
+  
+  .timer {
+    font-size: clamp(1.6rem, 1.8vw, 1.8rem);
+  }
+}
+
+/* Medium screens (768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 769px) {
+  .challenge-container {
+    padding: 25px;
+  }
+  
+  .difficulty-cards h2 {
+    font-size: clamp(2.5rem, 3vw, 3rem);
+    margin-bottom: 25px;
+  }
+  
+  .card-row {
+    gap: 20px;
+  }
+  
+  .diff-card {
+    width: clamp(250px, 22vw, 300px);
+    padding: 30px 0;
+    font-size: clamp(1.5rem, 1.8vw, 1.8rem);
+  }
+  
+  .typing-area {
+    max-width: 750px;
+  }
+  
+  .typing-area h3 {
+    font-size: clamp(1.8rem, 2vw, 2.2rem);
+  }
+  
+  .paragraph {
+    font-size: clamp(1.2rem, 1.3vw, 1.4rem);
+  }
+  
+  .typing-area textarea {
+    font-size: clamp(1.2rem, 1.3vw, 1.4rem);
+  }
+  
+  .timer {
+    font-size: clamp(1.4rem, 1.6vw, 1.6rem);
+  }
+}
+
+/* Tablets (481px to 768px) */
+@media (max-width: 768px) {
+  .challenge-container {
+    height: auto;
+    min-height: 100vh;
+    padding: clamp(20px, 4vw, 30px) clamp(15px, 3vw, 25px);
+    margin-top: 60px;
+  }
+  
+  .difficulty-cards h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: clamp(20px, 4vw, 25px);
+    margin-left: 0;
+    text-align: center;
+  }
+  
+  .card-row {
+    gap: clamp(15px, 3vw, 20px);
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .diff-card {
+    width: clamp(280px, 80vw, 350px);
+    padding: clamp(25px, 4vw, 35px) 0;
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    border-radius: 10px;
+  }
+  
+  .diff-card img.card-img {
+    height: clamp(120px, 25vw, 160px);
+  }
+  
+  .typing-area {
+    max-width: 95%;
+    width: 95%;
+  }
+  
+  .typing-area h3 {
+    font-size: clamp(1.6rem, 3.5vw, 2rem);
+    margin-bottom: 15px;
+  }
+  
+  .paragraph {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    padding: clamp(15px, 3vw, 20px);
+    border-radius: 8px;
+  }
+  
+  .typing-area textarea {
+    width: 95%;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    padding: clamp(12px, 2.5vw, 15px);
+    border-radius: 8px;
+  }
+  
+  .timer {
+    font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+    margin-top: 15px;
+  }
+  
+  .back-btn {
+    padding: clamp(8px, 2vw, 12px) clamp(16px, 3vw, 24px);
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  }
+  
+  .challenge-popup {
+    padding: clamp(25px, 5vw, 35px) clamp(20px, 4vw, 30px);
+    border-radius: 10px;
+    margin: 20px;
+  }
+  
+  .challenge-popup h3 {
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+  }
+  
+  .challenge-popup button {
+    padding: clamp(10px, 2.5vw, 15px) clamp(20px, 4vw, 30px);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+  }
+}
+
+/* Mobile phones (320px to 480px) */
+@media (max-width: 480px) {
+  .challenge-container {
+    padding: clamp(15px, 3vw, 20px) clamp(10px, 2vw, 15px);
+    margin-top: 55px;
+  }
+  
+  .difficulty-cards h2 {
+    font-size: clamp(1.6rem, 5vw, 2rem);
+    margin-bottom: clamp(15px, 3vw, 20px);
+  }
+  
+  .card-row {
+    gap: clamp(12px, 3vw, 15px);
+  }
+  
+  .diff-card {
+    width: clamp(250px, 90vw, 300px);
+    padding: clamp(20px, 4vw, 25px) 0;
+    font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+    border-radius: 8px;
+  }
+  
+  .diff-card img.card-img {
+    height: clamp(100px, 30vw, 140px);
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .typing-area {
+    max-width: 98%;
+    width: 98%;
+  }
+  
+  .typing-area h3 {
+    font-size: clamp(1.3rem, 4vw, 1.6rem);
+    margin-bottom: 12px;
+  }
+  
+  .paragraph {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    padding: clamp(12px, 3vw, 15px);
+    border-radius: 6px;
+    margin-bottom: 15px;
+  }
+  
+  .typing-area textarea {
+    width: 98%;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    padding: clamp(10px, 2.5vw, 12px);
+    border-radius: 6px;
+  }
+  
+  .timer {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin-top: 12px;
+  }
+  
+  .back-btn {
+    padding: clamp(6px, 2vw, 8px) clamp(12px, 3vw, 16px);
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    margin-bottom: 12px;
+  }
+  
+  .challenge-popup {
+    padding: clamp(20px, 4vw, 25px) clamp(15px, 3vw, 20px);
+    border-radius: 8px;
+    margin: 15px;
+  }
+  
+  .challenge-popup h3 {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+    margin-bottom: 15px;
+  }
+  
+  .challenge-popup button {
+    padding: clamp(8px, 2.5vw, 12px) clamp(16px, 4vw, 24px);
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+  }
+}
+
+/* Extra small devices (below 320px) */
+@media (max-width: 320px) {
+  .challenge-container {
+    padding: 10px 5px;
+  }
+  
+  .difficulty-cards h2 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  
+  .diff-card {
+    width: 250px;
+    padding: 18px 0;
+    font-size: 1rem;
+  }
+  
+  .diff-card img.card-img {
+    height: 80px;
+  }
+  
+  .typing-area h3 {
+    font-size: 1.2rem;
+  }
+  
+  .paragraph {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+  
+  .typing-area textarea {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+  
+  .timer {
+    font-size: 0.9rem;
+  }
+  
+  .back-btn {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+  
+  .challenge-popup {
+    padding: 15px;
+    margin: 10px;
+  }
+  
+  .challenge-popup h3 {
+    font-size: 1.2rem;
+  }
+  
+  .challenge-popup button {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .challenge-container {
+    padding: 10px 20px;
+    margin-top: 50px;
+  }
+  
+  .difficulty-cards h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 15px;
+  }
+  
+  .card-row {
+    flex-direction: row;
+    gap: 15px;
+  }
+  
+  .diff-card {
+    width: clamp(200px, 20vw, 250px);
+    padding: 20px 0;
+  }
+  
+  .diff-card img.card-img {
+    height: 80px;
+  }
+  
+  .typing-area h3 {
+    font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+  }
+  
+  .paragraph {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    padding: 12px;
+  }
+  
+  .typing-area textarea {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    padding: 10px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .diff-card {
+    border: 2px solid #000;
+  }
+  
+  .typing-area textarea {
+    border: 2px solid #000;
+  }
+  
+  .challenge-popup {
+    border: 2px solid #000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .diff-card {
+    transition: none;
+  }
+  
+  .diff-card:hover {
+    transform: none;
+  }
+  
+  .challenge-popup button {
+    transition: none;
+  }
 }

@@ -9,7 +9,8 @@
   padding: 20px;
   padding-top: 100px; /* Navbar se gap */
   box-sizing: border-box;
-  width: 200%;
+  width: 100%;
+  min-height: 100vh;
 }
 
 /* Main container */
@@ -22,12 +23,13 @@
   box-shadow: 0 8px 25px rgba(25, 25, 25, 0.7);
   overflow: hidden;
   animation: bounceIn 0.6s ease;
-  margin-right: 20%;
+  margin: 0 auto;
 }
 
 /* Left Image */
 .signup-main img {
   width: 50%;
+  height: 100%;
   object-fit: cover;
   border-radius: 16px 0 0 16px;
 }
@@ -248,11 +250,49 @@
   }
 }
 
-/* ✅ Responsive */
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+  .signup-main {
+    max-width: 1000px;
+    margin-top: 3%;
+  }
+  
+  .signup-form-container h2 {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+  }
+  
+  .signup-form-container {
+    padding: 40px 35px;
+  }
+}
+
+/* Medium screens (768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 769px) {
+  .signup-main {
+    width: 85%;
+    max-width: 800px;
+    margin-top: 5%;
+  }
+  
+  .signup-form-container h2 {
+    font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+  }
+}
+
+/* Tablets (481px to 768px) */
 @media (max-width: 768px) {
+  .signup-page {
+    padding: 15px 10px;
+    padding-top: 80px;
+  }
+  
   .signup-main {
     flex-direction: column;
     max-width: 95%;
+    margin: 0 auto;
+    border-radius: 15px;
   }
 
   .signup-main img {
@@ -263,7 +303,12 @@
 
   .signup-form-container {
     width: 100%;
-    padding: 20px;
+    padding: clamp(25px, 5vw, 35px) clamp(20px, 4vw, 30px);
+  }
+  
+  .signup-form-container h2 {
+    font-size: clamp(1.6rem, 4vw, 2rem);
+    margin-bottom: 20px;
   }
 
   .signup-form {
@@ -273,11 +318,231 @@
   .signup-input-group input,
   .signup-btn,
   .signup-google-btn {
-    width: 90%;
-    margin-left: 5%;
+    width: 100%;
+    margin-left: 0;
+    max-width: 320px;
+  }
+  
+  .signup-input-group input {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+  
+  .signup-btn,
+  .signup-google-btn {
+    padding: 12px;
+    font-size: 15px;
   }
 
   .signup-checkbox {
-    margin-left: 5%;
+    margin-left: 0;
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+  
+  .signup-login-link {
+    font-size: 14px;
+  }
+}
+
+/* Mobile phones (320px to 480px) */
+@media (max-width: 480px) {
+  .signup-page {
+    padding: 10px 5px;
+    padding-top: 70px;
+  }
+  
+  .signup-main {
+    width: 98%;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .signup-main img {
+    height: 150px;
+    border-radius: 12px 12px 0 0;
+  }
+  
+  .signup-form-container {
+    padding: clamp(20px, 4vw, 25px) clamp(15px, 3vw, 20px);
+  }
+  
+  .signup-form-container h2 {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+    margin-bottom: 15px;
+  }
+  
+  .signup-input-group {
+    margin-bottom: 15px;
+  }
+  
+  .signup-input-group input {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  
+  .signup-input-group label {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  
+  .signup-google-btn {
+    padding: 10px 14px;
+    margin-bottom: 12px;
+  }
+  
+  .signup-google-btn img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .signup-google-btn span {
+    font-size: 14px;
+  }
+  
+  .signup-or {
+    margin: 8px 0;
+    font-size: 13px;
+  }
+  
+  .signup-btn {
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  
+  .signup-checkbox {
+    font-size: 13px;
+    margin: 10px 0 15px;
+  }
+  
+  .signup-checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .signup-login-link {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+}
+
+/* Extra small devices (below 320px) */
+@media (max-width: 320px) {
+  .signup-page {
+    padding: 5px 2px;
+    padding-top: 60px;
+  }
+  
+  .signup-main {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+  
+  .signup-main img {
+    height: 120px;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .signup-form-container {
+    padding: 15px 10px;
+  }
+  
+  .signup-form-container h2 {
+    font-size: 1.3rem;
+  }
+  
+  .signup-input-group input {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+  
+  .signup-google-btn {
+    padding: 8px 12px;
+  }
+  
+  .signup-google-btn span {
+    font-size: 13px;
+  }
+  
+  .signup-btn {
+    padding: 8px;
+    font-size: 13px;
+  }
+  
+  .signup-login-link {
+    font-size: 11px;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .signup-container {
+    padding: 10px 0;
+  }
+  
+  .signup-main {
+    margin: 10px auto;
+    min-height: 400px;
+  }
+  
+  .signup-main img {
+    height: 120px;
+  }
+  
+  .signup-form-container {
+    padding: 20px 25px;
+  }
+  
+  .signup-form-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .signup-input-group {
+    margin-bottom: 10px;
+  }
+  
+  .signup-google-btn {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+  }
+  
+  .signup-btn {
+    margin-top: 10px;
+    padding: 8px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .signup-main {
+    border: 2px solid #000;
+  }
+  
+  .signup-input-group input {
+    border: 2px solid #000;
+  }
+  
+  .signup-google-btn {
+    border: 2px solid #000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .signup-main {
+    animation: none;
+  }
+  
+  .signup-btn:hover {
+    transform: none;
+  }
+  
+  .signup-input-group input:focus {
+    transition: none;
   }
 }

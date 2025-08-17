@@ -76,8 +76,8 @@ const LandingPage = () => {
               style={{ cursor:"pointer" }}
             >
               <img src={feature1} alt="Hard" className="feature-img" />
-              <h3>Hard-Challenge</h3>
-              <p>Take a hard challenge to test your skill.</p>
+              <h3>Falling-Word</h3>
+              <p>Make your learning more playfull and joyfull.</p>
             </div>
 
             {/* Medium Challenge */}
@@ -87,8 +87,8 @@ const LandingPage = () => {
               style={{ cursor:"pointer" }}
             >
               <img src={feature2} alt="Medium" className="feature-img" />
-              <h3>Medium-Challenge</h3>
-              <p>Three-level challenge inside.</p>
+              <h3>Challenge</h3>
+              <p>Three-level challenges inside Take the challenge to improve your typing.</p>
             </div>
 
             {/* Easy Challenge → leaderboard */}
@@ -98,8 +98,8 @@ const LandingPage = () => {
               style={{ cursor:"pointer" }}
             >
               <img src={feature3} alt="Easy" className="feature-img" />
-              <h3>Easy-Challenge</h3>
-              <p>Take an easy challenge to improve your typing.</p>
+              <h3>Leaderboard</h3>
+              <p>find your position in typing pro-world</p>
             </div>
           </div>
         </div>

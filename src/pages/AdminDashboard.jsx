@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "../styles/AdminDashboard.css";
 
 // ✅ Image imports
-import leaderboardIcon from "../images/leaderboard-icon.png";
-import addParaIcon from "../images/addpara-icon.png";
+import leaderboardIcon from "../images/L1.jpg";
+import addParaIcon from "../images/type1.jpg";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();

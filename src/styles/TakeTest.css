@@ -14,10 +14,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  width: 100vw;
-  /* ✅ NEW — keep the 250% width but centre the block */
-  left: 10%;
-  transform: translateX(-10%);
+  width: 100%;
 }
 
 .test-wrapper::before {
@@ -35,8 +32,8 @@
 
 /* Title */
 .test-title {
-  font-size: 2.9rem;
-  margin-bottom: 21px;
+  font-size: clamp(2rem, 5vw, 2.9rem);
+  margin-bottom: clamp(15px, 3vw, 21px);
   font-weight: bold;
   background-color: white;
   background-clip: text;
@@ -51,7 +48,7 @@
 .typing-area {
   background-color: white;
   color: black;
-  padding: 30px 40px;
+  padding: clamp(20px, 4vw, 40px);
   border-radius: 15px;
   width: 90%;
   max-width: 700px;
@@ -150,4 +147,257 @@
   box-shadow: 0 0 8px rgba(0,0,0,.08);
 }
 .paragraph-box { overflow-wrap: anywhere; word-wrap: break-word; }
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+  .test-container {
+    padding: 40px 20px;
+  }
+  
+  .test-paragraph-container {
+    max-width: 800px;
+    padding: 1.5rem 2rem;
+  }
+  
+  .paragraph-box {
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+  }
+  
+  .stats {
+    font-size: clamp(1.1rem, 1.2vw, 1.3rem);
+    gap: 30px;
+  }
+  
+  .key1 {
+    width: clamp(45px, 4vw, 55px);
+    height: clamp(45px, 4vw, 55px);
+    font-size: clamp(1.3rem, 1.5vw, 1.7rem);
+  }
+}
+
+/* Medium screens (768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 769px) {
+  .test-container {
+    padding: 30px 15px;
+  }
+  
+  .test-paragraph-container {
+    max-width: 750px;
+    padding: 1.25rem 1.75rem;
+  }
+  
+  .paragraph-box {
+    font-size: clamp(1.1rem, 1.3vw, 1.4rem);
+  }
+  
+  .stats {
+    gap: 25px;
+  }
+}
+
+/* Tablets (481px to 768px) */
+@media (max-width: 768px) {
+  .test-wrapper {
+    padding: 30px 15px;
+    margin-top: 60px;
+  }
+  
+  .test-paragraph-container {
+    max-width: 95%;
+    padding: clamp(1rem, 3vw, 1.25rem) clamp(0.75rem, 2vw, 1rem);
+    border-radius: 6px;
+  }
+  
+  .paragraph-box {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.6;
+  }
+  
+  .hidden-textarea {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.6;
+  }
+  
+  .stats {
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    gap: clamp(15px, 4vw, 20px);
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .keyboard1 {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .keyboard-row1 {
+    gap: 8px;
+  }
+  
+  .key1 {
+    width: clamp(35px, 8vw, 45px);
+    height: clamp(35px, 8vw, 45px);
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    border-radius: 6px;
+  }
+  
+  .reset-btn {
+    padding: clamp(10px, 2.5vw, 12px) clamp(20px, 5vw, 28px);
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    margin-top: 25px;
+  }
+}
+
+/* Mobile phones (320px to 480px) */
+@media (max-width: 480px) {
+  .test-wrapper {
+    padding: 20px 10px;
+    margin-top: 55px;
+  }
+  
+  .test-paragraph-container {
+    max-width: 98%;
+    padding: clamp(0.75rem, 3vw, 1rem) clamp(0.5rem, 2vw, 0.75rem);
+    border-radius: 4px;
+  }
+  
+  .paragraph-box {
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    line-height: 1.5;
+  }
+  
+  .hidden-textarea {
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    line-height: 1.5;
+  }
+  
+  .stats {
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    gap: clamp(10px, 3vw, 15px);
+    margin-top: 12px;
+  }
+  
+  .keyboard1 {
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  
+  .keyboard-row1 {
+    gap: 6px;
+  }
+  
+  .key1 {
+    width: clamp(28px, 10vw, 38px);
+    height: clamp(28px, 10vw, 38px);
+    font-size: clamp(0.8rem, 3vw, 1.1rem);
+    border-radius: 4px;
+  }
+  
+  .reset-btn {
+    padding: clamp(8px, 3vw, 10px) clamp(16px, 6vw, 24px);
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    margin-top: 20px;
+    border-radius: 6px;
+  }
+}
+
+/* Extra small devices (below 320px) */
+@media (max-width: 320px) {
+  .test-wrapper {
+    padding: 15px 5px;
+  }
+  
+  .test-paragraph-container {
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+  
+  .paragraph-box {
+    font-size: 0.85rem;
+  }
+  
+  .hidden-textarea {
+    font-size: 0.85rem;
+  }
+  
+  .stats {
+    font-size: 0.85rem;
+    gap: 8px;
+  }
+  
+  .key1 {
+    width: 25px;
+    height: 25px;
+    font-size: 0.75rem;
+  }
+  
+  .reset-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .test-wrapper {
+    padding: 10px 5px;
+    margin-top: 50px;
+  }
+  
+  .test-paragraph-container {
+    padding: 0.75rem 1rem;
+  }
+  
+  .paragraph-box {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  }
+  
+  .keyboard1 {
+    margin-bottom: 8px;
+  }
+  
+  .key1 {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+  
+  .stats {
+    margin-top: 10px;
+    gap: 15px;
+  }
+  
+  .reset-btn {
+    margin-top: 15px;
+    padding: 8px 20px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .test-paragraph-container {
+    border: 2px solid #000;
+  }
+  
+  .key1 {
+    border: 1px solid #000;
+  }
+  
+  .reset-btn {
+    border: 2px solid #000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .key1 {
+    transition: none;
+  }
+  
+  .reset-btn {
+    transition: none;
+  }
+}
 
